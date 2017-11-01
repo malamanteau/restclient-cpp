@@ -15,7 +15,7 @@
 
 #include <curl/curl.h>
 
-#include "restclient-cpp/version.h"
+#include "../version.h"
 #include "restclient-cpp/connection.h"
 
 /**

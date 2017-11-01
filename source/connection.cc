@@ -17,7 +17,7 @@
 
 #include "restclient-cpp/restclient.h"
 #include "restclient-cpp/helpers.h"
-#include "restclient-cpp/version.h"
+#include "../version.h"
 
 /**
  * @brief constructor for the Connection object
