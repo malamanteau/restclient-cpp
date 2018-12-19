@@ -142,8 +142,8 @@ RestClient::Connection::SetUserAgent(const std::string& userAgent) {
  *
  */
 void
-RestClient::Connection::SetCAInfoFilePath(const std::string& caInfoFilePath) {
-  this->caInfoFilePath = caInfoFilePath;
+RestClient::Connection::SetCAInfoFilePath(const std::string& inCAInfoFilePath) {
+  this->caInfoFilePath = inCAInfoFilePath;
 }
 
 /**
@@ -204,8 +204,8 @@ RestClient::Connection::SetBasicAuth(const std::string& username,
  *
  */
 void
-RestClient::Connection::SetCertPath(const std::string& cert) {
-  this->certPath = cert;
+RestClient::Connection::SetCertPath(const std::string& inCert) {
+  this->certPath = inCert;
 }
 
 /**
@@ -215,8 +215,8 @@ RestClient::Connection::SetCertPath(const std::string& cert) {
  *
  */
 void
-RestClient::Connection::SetCertType(const std::string& certType) {
-  this->certType = certType;
+RestClient::Connection::SetCertType(const std::string& inCertType) {
+  this->certType = inCertType;
 }
 
 /**
@@ -226,8 +226,8 @@ RestClient::Connection::SetCertType(const std::string& certType) {
  *
  */
 void
-RestClient::Connection::SetKeyPath(const std::string& keyPath) {
-  this->keyPath = keyPath;
+RestClient::Connection::SetKeyPath(const std::string& inKeyPath) {
+  this->keyPath = inKeyPath;
 }
 
 /**
@@ -237,8 +237,8 @@ RestClient::Connection::SetKeyPath(const std::string& keyPath) {
  *
  */
 void
-RestClient::Connection::SetKeyPassword(const std::string& keyPassword) {
-  this->keyPassword = keyPassword;
+RestClient::Connection::SetKeyPassword(const std::string& inKeyPassword) {
+  this->keyPassword = inKeyPassword;
 }
 
 /**
@@ -248,16 +248,16 @@ RestClient::Connection::SetKeyPassword(const std::string& keyPassword) {
  *
  */
 void
-RestClient::Connection::SetProxy(const std::string& uriProxy) {
-  std::string uriProxyUpper = uriProxy;
+RestClient::Connection::SetProxy(const std::string& inUriProxy) {
+  std::string uriProxyUpper = inUriProxy;
   // check if the provided address is prefixed with "http"
   std::transform(uriProxyUpper.begin(), uriProxyUpper.end(),
     uriProxyUpper.begin(), ::toupper);
 
-  if ((uriProxy.length() > 0) && (uriProxyUpper.compare(0, 4, "HTTP") != 0)) {
-    this->uriProxy = "http://" + uriProxy;
+  if ((inUriProxy.length() > 0) && (uriProxyUpper.compare(0, 4, "HTTP") != 0)) {
+    this->uriProxy = "http://" + inUriProxy;
   } else {
-    this->uriProxy = uriProxy;
+    this->uriProxy = inUriProxy;
   }
 }
 
